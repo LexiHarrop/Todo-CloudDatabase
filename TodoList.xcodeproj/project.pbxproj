@@ -21,6 +21,8 @@
 		D35692372BFFA303006C5D44 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = D35692362BFFA303006C5D44 /* Realtime */; };
 		D35692392BFFA303006C5D44 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = D35692382BFFA303006C5D44 /* Storage */; };
 		D356923B2BFFA303006C5D44 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = D356923A2BFFA303006C5D44 /* Supabase */; };
+		D3ECAB4B2C0B681C000D66F1 /* AppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ECAB4A2C0B681C000D66F1 /* AppEntryView.swift */; };
+		D3ECAB4D2C0B6836000D66F1 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ECAB4C2C0B6836000D66F1 /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		815D9D832BC413810050957E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D356922B2BFF6DC9006C5D44 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		D356922D2BFFA296006C5D44 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+		D3ECAB4A2C0B681C000D66F1 /* AppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryView.swift; sourceTree = "<group>"; };
+		D3ECAB4C2C0B6836000D66F1 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			children = (
 				815D9D7E2BC413800050957E /* LandingView.swift */,
 				814A08FB2BC41BC500921E4F /* ItemView.swift */,
+				D3ECAB4A2C0B681C000D66F1 /* AppEntryView.swift */,
+				D3ECAB4C2C0B6836000D66F1 /* AuthView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,7 +214,9 @@
 				D356922E2BFFA296006C5D44 /* Supabase.swift in Sources */,
 				814A08FC2BC41BC500921E4F /* ItemView.swift in Sources */,
 				814A08FE2BC41C7800921E4F /* TodoItem.swift in Sources */,
+				D3ECAB4B2C0B681C000D66F1 /* AppEntryView.swift in Sources */,
 				815D9D7D2BC413800050957E /* TodoListApp.swift in Sources */,
+				D3ECAB4D2C0B6836000D66F1 /* AuthView.swift in Sources */,
 				D356922C2BFF6DC9006C5D44 /* TodoListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
