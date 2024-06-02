@@ -60,12 +60,7 @@ struct LandingView: View {
                             }
                         
                     }
-                    .searchable(text: $searchText)
-                    .onChange(of: searchText) {
-                        Task {
-                            try await viewModel.filterTodos(on: searchText)
-                        }
-                    }
+                    
                 }
                 
             
@@ -84,6 +79,12 @@ struct LandingView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
+                }
+            }
+            .searchable(text: $searchText)
+            .onChange(of: searchText) {
+                Task {
+                    try await viewModel.filterTodos(on: searchText)
                 }
             }
             

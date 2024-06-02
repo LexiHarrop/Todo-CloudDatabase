@@ -24,6 +24,7 @@
 		D3ECAB4B2C0B681C000D66F1 /* AppEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ECAB4A2C0B681C000D66F1 /* AppEntryView.swift */; };
 		D3ECAB4D2C0B6836000D66F1 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ECAB4C2C0B6836000D66F1 /* AuthView.swift */; };
 		D3ECAB4F2C0D0273000D66F1 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ECAB4E2C0D0272000D66F1 /* NewItemView.swift */; };
+		D3ECAB512C0D0A39000D66F1 /* TodoItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ECAB502C0D0A39000D66F1 /* TodoItemImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D3ECAB4A2C0B681C000D66F1 /* AppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryView.swift; sourceTree = "<group>"; };
 		D3ECAB4C2C0B6836000D66F1 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		D3ECAB4E2C0D0272000D66F1 /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
+		D3ECAB502C0D0A39000D66F1 /* TodoItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				814A08FD2BC41C7800921E4F /* TodoItem.swift */,
+				D3ECAB502C0D0A39000D66F1 /* TodoItemImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				815D9D7F2BC413800050957E /* LandingView.swift in Sources */,
 				D356922E2BFFA296006C5D44 /* Supabase.swift in Sources */,
 				814A08FC2BC41BC500921E4F /* ItemView.swift in Sources */,
+				D3ECAB512C0D0A39000D66F1 /* TodoItemImage.swift in Sources */,
 				814A08FE2BC41C7800921E4F /* TodoItem.swift in Sources */,
 				D3ECAB4B2C0B681C000D66F1 /* AppEntryView.swift in Sources */,
 				815D9D7D2BC413800050957E /* TodoListApp.swift in Sources */,
