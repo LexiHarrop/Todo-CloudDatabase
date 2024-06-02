@@ -66,7 +66,7 @@ struct LandingView: View {
             }
             .navigationTitle("To do")
             .sheet(isPresented: $presentingNewItemSheet) {
-                Text("Hello, world!")
+                NewItemView(showSheet: $presentingNewItemSheet)
                     .presentationDetents([.fraction(0.15)])
             }
             .toolbar {
