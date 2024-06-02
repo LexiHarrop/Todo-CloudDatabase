@@ -25,27 +25,36 @@ struct LandingView: View {
             
             VStack {
                 
-                List($viewModel.todos) { $todo in
-                    
-                    ItemView(currentItem: $todo, viewModel: viewModel)
+                if viewModel.todos.isEmpty {
+                    ContentUnavailableView(
+                        "No to-do items",
+                        systemImage: "pencil.tip.crop.circle.badge.plus",
+                        description: Text("Add a reminder to get started")
+                    )
+                } else {
+                    List($viewModel.todos) { $todo in
+                        
+                        ItemView(currentItem: $todo, viewModel: viewModel)
                         // Delete item
-                        .swipeActions {
-                            Button(
-                                "Delete",
-                                role: .destructive,
-                                action: {
-                                    viewModel.delete(todo)
-                                }
-                            )
+                            .swipeActions {
+                                Button(
+                                    "Delete",
+                                    role: .destructive,
+                                    action: {
+                                        viewModel.delete(todo)
+                                    }
+                                )
+                            }
+                        
+                    }
+                    .searchable(text: $searchText)
+                    .onChange(of: searchText) {
+                        Task {
+                            try await viewModel.filterTodos(on: searchText)
                         }
-                    
-                }
-                .searchable(text: $searchText)
-                .onChange(of: searchText) {
-                    Task {
-                        try await viewModel.filterTodos(on: searchText)
                     }
                 }
+                
             
                 
             }
