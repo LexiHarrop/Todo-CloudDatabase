@@ -69,7 +69,7 @@ struct LandingView: View {
             .navigationTitle("To do")
             .sheet(isPresented: $presentingNewItemSheet) {
                 NewItemView(showSheet: $presentingNewItemSheet)
-                    .presentationDetents([.fraction(0.15)])
+                    .presentationDetents([.fraction(0.25)])
             }
             .toolbar {
                 // Add a button to trigger showing the sheet

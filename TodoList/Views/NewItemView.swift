@@ -5,11 +5,18 @@
 //  Created by Lexi on 2024-06-02.
 //
 
+import PhotosUI
 import SwiftUI
 
 struct NewItemView: View {
     
     // MARK: Stored properties
+    
+    // The selection made in the PhotosPicker
+    @State var selectionResult: PhotosPickerItem?
+    
+    // The actual image loaded from the selection that was made
+    @State var newItemImage: TodoItemImage?
     
     // The item currently being added
     @State var newItemDescription = ""
@@ -21,6 +28,7 @@ struct NewItemView: View {
     @Binding var showSheet: Bool
     
     // MARK: Computed properties
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -36,8 +44,32 @@ struct NewItemView: View {
                     .font(.caption)
                     .disabled(newItemDescription.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true)
                 }
-
-                Spacer()
+                
+                HStack {
+                    
+                    PhotosPicker(selection: $selectionResult, matching: .images) {
+                        
+                        // Has an image been loaded?
+                        if let newItemImage = newItemImage {
+                            
+                            // Yes, show it
+                            newItemImage.image
+                                .resizable()
+                                .scaledToFit()
+                            
+                        } else {
+                            
+                            // No, show an icon instead
+                            Image(systemName: "photo.badge.plus")
+                                .symbolRenderingMode(.multicolor)
+                                .font(.system(size: 30))
+                                .foregroundStyle(.tint)
+                            
+                        }
+                    }
+                    
+                }
+                .frame(height: 100)
             }
             .padding(20)
             .toolbar {
@@ -51,10 +83,40 @@ struct NewItemView: View {
                     
                 }
             }
+            
+            // This block of code is invoked whenever the selection from the picker changes
+            .onChange(of: selectionResult) {
+                // When the selection result is not nil...
+                if let imageSelection = selectionResult {
+                    // ... transfer the data from the selection result into
+                    // an actual instance of TodoItemImage
+                    loadTransferable(from: imageSelection)
+                    
+                    
+                }
+                
+                
+            }
         }
-
-
     }
+    // MARK: Functions
+    
+    // Transfer the data from the PhotosPicker selection result into the stored property that
+    // will hold the actual image for the new to-do item
+    
+    private func loadTransferable(from imageSelection: PhotosPickerItem) {
+        Task {
+            do {
+                // Attempt to set the stored property that holds the image data
+                newItemImage = try await imageSelection.loadTransferable(type: TodoItemImage.self)
+            } catch {
+                debugPrint(error)
+            }
+        }
+    }
+    
+    
+    
 }
 
 #Preview {
