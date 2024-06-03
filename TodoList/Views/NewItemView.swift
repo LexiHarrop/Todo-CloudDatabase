@@ -37,7 +37,7 @@ struct NewItemView: View {
                     
                     Button("ADD") {
                         // Add the new to-do item
-                        viewModel.createToDo(withTitle: newItemDescription)
+                        viewModel.createToDo(withTitle: newItemDescription, andImage: newItemImage)
                         // Clear the input field
                         newItemDescription = ""
                     }
